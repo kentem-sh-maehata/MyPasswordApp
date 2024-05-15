@@ -11,7 +11,14 @@
         var result = document.getElementById('result');
         var letters = 'abcdefghijklmnopqrstuvwxyz';
         var seed = letters + letters.toUpperCase();
+        if (document.getElementById('num').checked) {
+            seed += "1234567890";
+        }
+        if (document.getElementById('symbol').checked) {
+            seed += "-_.!+?*/";
+        }
         var pass = "";
+        console.log(seed.length);
         for (var i = 0; i < Number(slider_1.value); i++) {
             var idx = Math.floor(Math.random() * seed.length);
             pass += seed[idx];
